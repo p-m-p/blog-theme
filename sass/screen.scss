@@ -1,0 +1,46 @@
+/*
+Theme Name: Code 'n' stuff
+Author: Phil Parsons
+Author URI: http://philparsons.co.uk
+License URI: license.txt
+*/
+
+@import 'var', 'mixins', 'reset', 'base_elements';
+
+/* =
+----------------------------------------------------------------------------- */
+body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
+
+/* =Main page
+----------------------------------------------------------------------------- */
+#page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =Info and settings bar
+----------------------------------------------------------------------------- */
+#info-bar {
+  @include background_rgba(0, 0, 0, 0.5);
+  padding: $thin_padding;
+  overflow: hidden;
+}
+
+@import 'social-icons/*.png';
+@include all-social-icons-sprites;
+
+#sm-links {
+
+  overflow: hidden;
+  float: right;
+
+  li { display: inline }
+
+}
+
+.social-icon {
+  display: block;
+  float: left;
+  width: 48px;
+  height: 48px;
+}

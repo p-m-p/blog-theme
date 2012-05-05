@@ -5,8 +5,8 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width">
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -28,30 +28,33 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
 
 ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-<![endif]-->
-<?php
-	/* We add some JavaScript to pages with the comment form
-	 * to support sites with threaded comments (when in use).
-	 */
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-
-	/* Always have wp_head() just before the closing </head>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to add elements to <head> such
-	 * as styles, scripts, and meta tags.
-	 */
-	wp_head();
-?>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" media="screen" href="<?php echo get_template_directory_uri(); ?>/stylesheets/screen.css">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.min.js"></script>
+<?php	wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 
-<div id="page" class="hfeed">
+<div id="page">
+
+  <div id="info-bar">
+
+    <ul id="extras">
+      <li><a id="about-me" href="" title="More about me"></a></li>
+      <li><a id="config" href="" title="Display options for the site"></a></li>
+    </ul>
+
+    <ul id="sm-links">
+      <li><a class="social-icon social-icons-github" href="" title="Fork me on Github"></a></li>
+      <li><a class="social-icon social-icons-flickr" href="" title="View my photos on Flickr"></a></li>
+      <li><a class="social-icon social-icons-twitter" href="" title="Follow me on Twitter"></a></li>
+      <li><a class="social-icon social-icons-linkedin" href="" title="View my profile on Linkedin"></a></li>
+      <li><a class="social-icon social-icons-gplus" href="" title="Add me to your circles on Google+"></a></li>
+      <li><a class="social-icon social-icons-rss" href="" title="Subscribe to my RSS feed"></a></li>
+    </ul>
+
+  </div>
 
 	<header id="branding" role="banner">
 
@@ -71,4 +74,4 @@
 
 	</header><!-- #branding -->
 
-	<div id="main">
+	<div id="main" role="main">
