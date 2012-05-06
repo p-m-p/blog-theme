@@ -29,7 +29,8 @@
 
 ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="stylesheet" media="screen" href="<?php echo get_template_directory_uri(); ?>/stylesheets/screen.css">
+<link rel="stylesheet" media="screen, projection" href="<?php echo get_template_directory_uri(); ?>/stylesheets/screen.css">
+<link href="http://fonts.googleapis.com/css?family=Cabin+Condensed:500" rel="stylesheet">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.min.js"></script>
 <?php	wp_head(); ?>
@@ -59,8 +60,7 @@
 	<header id="branding" role="banner">
 
     <h1 id="site-title">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
-      </a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
     </h1>
 
     <nav id="access" role="navigation">
@@ -69,7 +69,7 @@
       <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to primary content', 'twentyeleven' ); ?></a></div>
       <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'twentyeleven' ); ?>"><?php _e( 'Skip to secondary content', 'twentyeleven' ); ?></a></div>
 
-      <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+      <?php wp_nav_menu( array( 'menu' => 'primary', 'container' => FALSE, 'walker' => new Main_Menu_Walker() ) ); ?>
     </nav><!-- #access -->
 
 	</header><!-- #branding -->

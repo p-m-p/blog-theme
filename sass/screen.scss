@@ -5,7 +5,7 @@ Author URI: http://philparsons.co.uk
 License URI: license.txt
 */
 
-@import 'var', 'mixins', 'reset', 'base_elements';
+@import 'var', 'mixins', 'reset', 'base';
 @import "compass/css3";
 
 /* =
@@ -26,7 +26,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   overflow: hidden;
 }
 
-@import 'info-bar-icons/*.png';
+@import 'icons/*.png';
 
 #sm-links {
 
@@ -46,27 +46,27 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 }
 
 #flickr-icn {
-  @include info-bar-icons-sprite(flickr);
+  @include icons-sprite(flickr);
   &:hover { background-color: #FE63BB }
 }
 
 #twitter-icn {
-  @include info-bar-icons-sprite(twitter);
+  @include icons-sprite(twitter);
   &:hover { background-color: #019AD2 }
 }
 
 #linkedin-icn {
-  @include info-bar-icons-sprite(linkedin);
+  @include icons-sprite(linkedin);
   &:hover { background-color: #0571A6 }
 }
 
 #gplus-icn {
-  @include info-bar-icons-sprite(gplus);
+  @include icons-sprite(gplus);
   &:hover { background-color: #C53727 }
 }
 
 #subscribe-icn {
-  @include info-bar-icons-sprite(subscribe);
+  @include icons-sprite(subscribe);
   &:hover { background-color: #ff7200 }
 }
 
@@ -82,15 +82,57 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 }
 
 #about-me-icn {
-  @include info-bar-icons-sprite(about-me);
+  @include icons-sprite(about-me);
   &:hover { background-color: $cl_theme_elements }
 }
 
 #config-icn {
-  @include info-bar-icons-sprite(settings);
+  @include icons-sprite(settings);
   &:hover { background-color: $cl_theme_elements }
 }
 
+
+/* =Branding and main navigation
+----------------------------------------------------------------------------- */
+#branding {
+  @include background_rgba(0, 0, 0, 0.5);
+  margin: $gap 0;
+  position: relative;
+}
+
+#site-title {
+
+  font-size: 38px;
+  padding: $thin_padding;
+  text-transform: uppercase;
+
+  a { color: white; text-decoration: none }
+
+}
+
+// main nav
+#menu-primary {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.menu-item { display: inline }
+
+.primary-nav-link {
+
+  display: block;
+  float: left;
+  height: 34px;
+  padding: 14px 10px 0 48px;
+  color: white;
+  font-family: $display_font;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  @include icons-sprite(projects);
+
+}
 
 /* =Utils
 ----------------------------------------------------------------------------- */

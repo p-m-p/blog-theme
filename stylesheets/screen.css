@@ -72,6 +72,10 @@ a:focus {
 a:hover, a:active {
   outline: 0; }
 
+h1, h2, h3, h4 {
+  font-family: "Cabin Condensed", helvetica, Arial, sans-serif;
+  font-weight: 500; }
+
 /* =
 ----------------------------------------------------------------------------- */
 body {
@@ -90,8 +94,8 @@ body {
   background: rgba(0, 0, 0, 0.5);
   overflow: hidden; }
 
-.info-bar-icons-sprite, #flickr-icn, #twitter-icn, #linkedin-icn, #gplus-icn, #subscribe-icn, #about-me-icn, #config-icn {
-  background: url('../images/info-bar-icons-se63948df60.png') no-repeat; }
+.icons-sprite, #flickr-icn, #twitter-icn, #linkedin-icn, #gplus-icn, #subscribe-icn, #about-me-icn, #config-icn, .primary-nav-link {
+  background: url('../images/icons-s860a3a1229.png') no-repeat; }
 
 #sm-links {
   overflow: hidden;
@@ -111,7 +115,7 @@ body {
   transition: background-color, 0.3s; }
 
 #flickr-icn {
-  background-position: 0 -200px; }
+  background-position: 0 -248px; }
   #flickr-icn:hover {
     background-color: #FE63BB; }
 
@@ -121,7 +125,7 @@ body {
     background-color: #019AD2; }
 
 #linkedin-icn {
-  background-position: 0 -240px; }
+  background-position: 0 -288px; }
   #linkedin-icn:hover {
     background-color: #0571A6; }
 
@@ -142,14 +146,50 @@ body {
     display: inline; }
 
 #about-me-icn {
-  background-position: 0 -160px; }
+  background-position: 0 -208px; }
   #about-me-icn:hover {
-    background-color: #0259cf; }
+    background-color: #b900da; }
 
 #config-icn {
   background-position: 0 0; }
   #config-icn:hover {
-    background-color: #0259cf; }
+    background-color: #b900da; }
+
+/* =Branding and main navigation
+----------------------------------------------------------------------------- */
+#branding {
+  background: black;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 10px 0;
+  position: relative; }
+
+#site-title {
+  font-size: 38px;
+  padding: 5px;
+  text-transform: uppercase; }
+  #site-title a {
+    color: white;
+    text-decoration: none; }
+
+#menu-primary {
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.menu-item {
+  display: inline; }
+
+.primary-nav-link {
+  display: block;
+  float: left;
+  height: 34px;
+  padding: 14px 10px 0 48px;
+  color: white;
+  font-family: "Cabin Condensed", helvetica, Arial, sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-position: 0 -160px; }
 
 /* =Utils
 ----------------------------------------------------------------------------- */
