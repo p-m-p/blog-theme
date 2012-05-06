@@ -40,18 +40,18 @@
 
   <div id="info-bar">
 
-    <ul id="extras">
-      <li><a id="about-me" href="" title="More about me"></a></li>
-      <li><a id="config" href="" title="Display options for the site"></a></li>
+    <ul id="info-selectors">
+      <li><a class="info-bar-icon" id="about-me-icn" href="" title="More about me"></a></li>
+      <li><a class="info-bar-icon" id="config-icn" href="" title="Display options for the site"></a></li>
     </ul>
 
     <ul id="sm-links">
-      <li><a class="social-icon social-icons-github" href="" title="Fork me on Github"></a></li>
-      <li><a class="social-icon social-icons-flickr" href="" title="View my photos on Flickr"></a></li>
-      <li><a class="social-icon social-icons-twitter" href="" title="Follow me on Twitter"></a></li>
-      <li><a class="social-icon social-icons-linkedin" href="" title="View my profile on Linkedin"></a></li>
-      <li><a class="social-icon social-icons-gplus" href="" title="Add me to your circles on Google+"></a></li>
-      <li><a class="social-icon social-icons-rss" href="" title="Subscribe to my RSS feed"></a></li>
+      <li><a class="info-bar-icon" id="github-icn" href="" title="Fork me on Github"></a></li>
+      <li><a class="info-bar-icon" id="flickr-icn" href="" title="View my photos on Flickr"></a></li>
+      <li><a class="info-bar-icon" id="twitter-icn" href="" title="Follow me on Twitter"></a></li>
+      <li><a class="info-bar-icon" id="linkedin-icn" href="" title="View my profile on Linkedin"></a></li>
+      <li><a class="info-bar-icon" id="gplus-icn" href="" title="Add me to your circles on Google+"></a></li>
+      <li><a class="info-bar-icon" id="subscribe-icn" href="" title="Subscribe to my RSS feed"></a></li>
     </ul>
 
   </div>

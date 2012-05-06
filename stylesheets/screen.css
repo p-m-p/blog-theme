@@ -29,7 +29,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   outline: 0; }
 
 body {
-  background: #fff;
   line-height: 1; }
 
 ol, ul {
@@ -89,17 +88,10 @@ body {
 #info-bar {
   background: black;
   background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
   overflow: hidden; }
 
-.social-icons-sprite, .social-icons-flickr, .social-icons-twitter {
-  background: url('../images/social-icons-sb9c26253f0.png') no-repeat; }
-
-.social-icons-flickr {
-  background-position: 0 -48px; }
-
-.social-icons-twitter {
-  background-position: 0 0; }
+.info-bar-icons-sprite, #flickr-icn, #twitter-icn, #linkedin-icn, #gplus-icn, #subscribe-icn, #about-me-icn, #config-icn {
+  background: url('../images/info-bar-icons-se63948df60.png') no-repeat; }
 
 #sm-links {
   overflow: hidden;
@@ -107,8 +99,74 @@ body {
   #sm-links li {
     display: inline; }
 
-.social-icon {
+.info-bar-icon {
   display: block;
   float: left;
-  width: 48px;
-  height: 48px; }
+  width: 40px;
+  height: 40px;
+  -webkit-transition: background-color, 0.3s;
+  -moz-transition: background-color, 0.3s;
+  -ms-transition: background-color, 0.3s;
+  -o-transition: background-color, 0.3s;
+  transition: background-color, 0.3s; }
+
+#flickr-icn {
+  background-position: 0 -200px; }
+  #flickr-icn:hover {
+    background-color: #FE63BB; }
+
+#twitter-icn {
+  background-position: 0 -80px; }
+  #twitter-icn:hover {
+    background-color: #019AD2; }
+
+#linkedin-icn {
+  background-position: 0 -240px; }
+  #linkedin-icn:hover {
+    background-color: #0571A6; }
+
+#gplus-icn {
+  background-position: 0 -40px; }
+  #gplus-icn:hover {
+    background-color: #C53727; }
+
+#subscribe-icn {
+  background-position: 0 -120px; }
+  #subscribe-icn:hover {
+    background-color: #ff7200; }
+
+#info-selectors {
+  overflow: hidden;
+  float: left; }
+  #info-selectors li {
+    display: inline; }
+
+#about-me-icn {
+  background-position: 0 -160px; }
+  #about-me-icn:hover {
+    background-color: #0259cf; }
+
+#config-icn {
+  background-position: 0 0; }
+  #config-icn:hover {
+    background-color: #0259cf; }
+
+/* =Utils
+----------------------------------------------------------------------------- */
+.assistive-text {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+#access a.assistive-text:active,
+#access a.assistive-text:focus {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  color: #1982d1;
+  clip: auto !important;
+  font-size: 12px;
+  position: absolute;
+  text-decoration: underline;
+  top: 0;
+  left: 7.6%; }

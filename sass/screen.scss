@@ -6,6 +6,7 @@ License URI: license.txt
 */
 
 @import 'var', 'mixins', 'reset', 'base_elements';
+@import "compass/css3";
 
 /* =
 ----------------------------------------------------------------------------- */
@@ -22,12 +23,10 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 ----------------------------------------------------------------------------- */
 #info-bar {
   @include background_rgba(0, 0, 0, 0.5);
-  padding: $thin_padding;
   overflow: hidden;
 }
 
-@import 'social-icons/*.png';
-@include all-social-icons-sprites;
+@import 'info-bar-icons/*.png';
 
 #sm-links {
 
@@ -38,9 +37,77 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 
 }
 
-.social-icon {
+.info-bar-icon {
   display: block;
   float: left;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
+  @include transition(background-color, .3s);
+}
+
+#flickr-icn {
+  @include info-bar-icons-sprite(flickr);
+  &:hover { background-color: #FE63BB }
+}
+
+#twitter-icn {
+  @include info-bar-icons-sprite(twitter);
+  &:hover { background-color: #019AD2 }
+}
+
+#linkedin-icn {
+  @include info-bar-icons-sprite(linkedin);
+  &:hover { background-color: #0571A6 }
+}
+
+#gplus-icn {
+  @include info-bar-icons-sprite(gplus);
+  &:hover { background-color: #C53727 }
+}
+
+#subscribe-icn {
+  @include info-bar-icons-sprite(subscribe);
+  &:hover { background-color: #ff7200 }
+}
+
+#info-selectors {
+
+  overflow: hidden;
+  float: left;
+
+  li {
+    display: inline;
+  }
+
+}
+
+#about-me-icn {
+  @include info-bar-icons-sprite(about-me);
+  &:hover { background-color: $cl_theme_elements }
+}
+
+#config-icn {
+  @include info-bar-icons-sprite(settings);
+  &:hover { background-color: $cl_theme_elements }
+}
+
+
+/* =Utils
+----------------------------------------------------------------------------- */
+.assistive-text {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+#access a.assistive-text:active,
+#access a.assistive-text:focus {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  color: #1982d1;
+  clip: auto !important;
+  font-size: 12px;
+  position: absolute;
+  text-decoration: underline;
+  top: 0;
+  left: 7.6%;
 }
