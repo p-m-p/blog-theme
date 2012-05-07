@@ -75,9 +75,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   overflow: hidden;
   float: left;
 
-  li {
-    display: inline;
-  }
+  li { display: inline }
 
 }
 
@@ -98,6 +96,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   @include background_rgba(0, 0, 0, 0.5);
   margin: $gap 0;
   position: relative;
+  padding: 0 0 0 $gap;
 }
 
 #site-title {
@@ -119,20 +118,51 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 
 .menu-item { display: inline }
 
+// menu icons - TODO need clean database to set these up
+#pnl-778 { @include icons-sprite(projects) }
+#pnl-779 { @include icons-sprite(blog) }
+
+.pnl-icn {
+  display: block;
+  float: left;
+  width: 48px;
+  height: 48px;
+  @include transition(background-color, .4s);
+}
+
+.pnl-txt {
+  font: 600 16px/1 $display_font;
+  text-transform: uppercase;
+  padding: 16px 10px 0;
+  display: block;
+  float: left;
+}
+
 .primary-nav-link {
 
   display: block;
-  float: left;
-  height: 34px;
-  padding: 14px 10px 0 48px;
-  color: white;
-  font-family: $display_font;
   text-decoration: none;
-  font-size: 16px;
-  text-transform: uppercase;
-  @include icons-sprite(projects);
+  float: left;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin: 0 $gap 0 0;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  @include transition(width, .4s);
+
+  &:hover {
+
+    color: white;
+    width: 120px;
+
+    .pnl-icn { background-color: $cl_theme_elements !important; }
+
+  }
 
 }
+
 
 /* =Utils
 ----------------------------------------------------------------------------- */

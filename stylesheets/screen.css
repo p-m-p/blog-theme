@@ -57,6 +57,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
+html {
+  font: 0.85em/1.2 helvetica, Arial, sans-serif; }
+
 a {
   color: #00e; }
 
@@ -94,7 +97,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
   overflow: hidden; }
 
-.icons-sprite, #flickr-icn, #twitter-icn, #linkedin-icn, #gplus-icn, #subscribe-icn, #about-me-icn, #config-icn, .primary-nav-link {
+.icons-sprite, #flickr-icn, #twitter-icn, #linkedin-icn, #gplus-icn, #subscribe-icn, #about-me-icn, #config-icn, #pnl-778, #pnl-779 {
   background: url('../images/icons-s860a3a1229.png') no-repeat; }
 
 #sm-links {
@@ -161,7 +164,8 @@ body {
   background: black;
   background: rgba(0, 0, 0, 0.5);
   margin: 10px 0;
-  position: relative; }
+  position: relative;
+  padding: 0 0 0 10px; }
 
 #site-title {
   font-size: 38px;
@@ -179,17 +183,51 @@ body {
 .menu-item {
   display: inline; }
 
-.primary-nav-link {
+#pnl-778 {
+  background-position: 0 -160px; }
+
+#pnl-779 {
+  background-position: 0 -328px; }
+
+.pnl-icn {
   display: block;
   float: left;
-  height: 34px;
-  padding: 14px 10px 0 48px;
-  color: white;
-  font-family: "Cabin Condensed", helvetica, Arial, sans-serif;
-  text-decoration: none;
-  font-size: 16px;
+  width: 48px;
+  height: 48px;
+  -webkit-transition: background-color, 0.4s;
+  -moz-transition: background-color, 0.4s;
+  -ms-transition: background-color, 0.4s;
+  -o-transition: background-color, 0.4s;
+  transition: background-color, 0.4s; }
+
+.pnl-txt {
+  font: 600 16px/1 "Cabin Condensed", helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  background-position: 0 -160px; }
+  padding: 16px 10px 0;
+  display: block;
+  float: left; }
+
+.primary-nav-link {
+  display: block;
+  text-decoration: none;
+  float: left;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin: 0 10px 0 0;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  -webkit-transition: width, 0.4s;
+  -moz-transition: width, 0.4s;
+  -ms-transition: width, 0.4s;
+  -o-transition: width, 0.4s;
+  transition: width, 0.4s; }
+  .primary-nav-link:hover {
+    color: white;
+    width: 120px; }
+    .primary-nav-link:hover .pnl-icn {
+      background-color: #b900da !important; }
 
 /* =Utils
 ----------------------------------------------------------------------------- */
