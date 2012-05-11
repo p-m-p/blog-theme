@@ -77,7 +77,8 @@ a:hover, a:active {
 
 h1, h2, h3, h4 {
   font-family: "Cabin Condensed", helvetica, Arial, sans-serif;
-  font-weight: 500; }
+  font-weight: 500;
+  text-transform: uppercase; }
 
 /* =
 ----------------------------------------------------------------------------- */
@@ -97,8 +98,8 @@ body {
   background: rgba(0, 0, 0, 0.5);
   overflow: hidden; }
 
-.icons-sprite, #flickr-icn, #twitter-icn, #linkedin-icn, #gplus-icn, #subscribe-icn, #about-me-icn, #config-icn, #pnl-778, #pnl-779 {
-  background: url('../images/icons-s860a3a1229.png') no-repeat; }
+.icons-sprite, #flickr-icn, #twitter-icn, #linkedin-icn, #gplus-icn, #subscribe-icn, #about-me-icn, #config-icn, #pnl-11, #pnl-12 {
+  background: url('../images/icons-se92761eb27.png') no-repeat; }
 
 #sm-links {
   overflow: hidden;
@@ -111,34 +112,37 @@ body {
   float: left;
   width: 40px;
   height: 40px;
-  -webkit-transition: background-color, 0.3s;
-  -moz-transition: background-color, 0.3s;
-  -ms-transition: background-color, 0.3s;
-  -o-transition: background-color, 0.3s;
-  transition: background-color, 0.3s; }
+  -moz-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
 
 #flickr-icn {
-  background-position: 0 -248px; }
+  background-position: 0 -88px; }
   #flickr-icn:hover {
     background-color: #FE63BB; }
 
 #twitter-icn {
-  background-position: 0 -80px; }
+  background-position: 0 -336px; }
   #twitter-icn:hover {
     background-color: #019AD2; }
 
 #linkedin-icn {
-  background-position: 0 -288px; }
+  background-position: 0 -168px; }
   #linkedin-icn:hover {
     background-color: #0571A6; }
 
 #gplus-icn {
-  background-position: 0 -40px; }
+  background-position: 0 -128px; }
   #gplus-icn:hover {
     background-color: #C53727; }
 
 #subscribe-icn {
-  background-position: 0 -120px; }
+  background-position: 0 -296px; }
   #subscribe-icn:hover {
     background-color: #ff7200; }
 
@@ -149,14 +153,49 @@ body {
     display: inline; }
 
 #about-me-icn {
-  background-position: 0 -208px; }
+  background-position: 0 0; }
   #about-me-icn:hover {
     background-color: #b900da; }
 
 #config-icn {
-  background-position: 0 0; }
+  background-position: 0 -256px; }
   #config-icn:hover {
     background-color: #b900da; }
+
+#info-box {
+  padding: 20px;
+  background: white;
+  position: relative;
+  top: -300px;
+  overflow: hidden;
+  display: none;
+  z-index: -1; }
+
+.info-box-segment {
+  width: 31.33%;
+  margin: 0 2% 0 0;
+  float: left; }
+
+.info-segment-title {
+  font-size: 2em;
+  margin: 0 0 .4em; }
+
+.skill-bar {
+  overflow: hidden; }
+  .skill-bar h2 {
+    margin: 0 40px 0 0;
+    background-color: #efefef;
+    color: white; }
+
+.skill-level {
+  display: inline-block;
+  background: #b900da; }
+
+.skill-total {
+  width: 30px;
+  background: #333;
+  color: white;
+  float: right; }
 
 /* =Branding and main navigation
 ----------------------------------------------------------------------------- */
@@ -183,22 +222,25 @@ body {
 .menu-item {
   display: inline; }
 
-#pnl-778 {
-  background-position: 0 -160px; }
+#pnl-11 {
+  background-position: 0 -208px; }
 
-#pnl-779 {
-  background-position: 0 -328px; }
+#pnl-12 {
+  background-position: 0 -40px; }
 
 .pnl-icn {
   display: block;
   float: left;
   width: 48px;
   height: 48px;
-  -webkit-transition: background-color, 0.4s;
-  -moz-transition: background-color, 0.4s;
-  -ms-transition: background-color, 0.4s;
-  -o-transition: background-color, 0.4s;
-  transition: background-color, 0.4s; }
+  -moz-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s; }
 
 .pnl-txt {
   font: 600 16px/1 "Cabin Condensed", helvetica, Arial, sans-serif;
@@ -218,14 +260,17 @@ body {
   width: 48px;
   height: 48px;
   overflow: hidden;
-  -webkit-transition: width, 0.4s;
-  -moz-transition: width, 0.4s;
-  -ms-transition: width, 0.4s;
-  -o-transition: width, 0.4s;
-  transition: width, 0.4s; }
+  -moz-transition-property: width;
+  -webkit-transition-property: width;
+  -o-transition-property: width;
+  transition-property: width;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s; }
   .primary-nav-link:hover {
     color: white;
-    width: 120px; }
+    width: 140px; }
     .primary-nav-link:hover .pnl-icn {
       background-color: #b900da !important; }
 

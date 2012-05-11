@@ -89,6 +89,50 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   &:hover { background-color: $cl_theme_elements }
 }
 
+#info-box {
+  padding: $gap * 2;
+  background: white;
+  position: relative;
+  top: -300px;
+  overflow: hidden;
+  display: none;
+  z-index: -1;
+}
+
+.info-box-segment {
+  width: 31.33%;
+  margin: 0 2% 0 0;
+  float: left;
+}
+
+.info-segment-title {
+  font-size: 2em;
+  margin: 0 0 .4em;
+}
+
+.skill-bar {
+  
+  overflow: hidden;
+
+  h2 {
+    margin: 0 30px + $gap 0 0;
+    background-color: #efefef;
+    color: white;
+  }
+
+}
+
+.skill-level {
+  display: inline-block;
+  background: $cl_theme_elements;
+}
+
+.skill-total {
+  width: 30px;
+  background: #333;
+  color: white;
+  float: right;
+}
 
 /* =Branding and main navigation
 ----------------------------------------------------------------------------- */
@@ -119,8 +163,8 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 .menu-item { display: inline }
 
 // menu icons - TODO need clean database to set these up
-#pnl-778 { @include icons-sprite(projects) }
-#pnl-779 { @include icons-sprite(blog) }
+#pnl-11 { @include icons-sprite(projects) }
+#pnl-12 { @include icons-sprite(blog) }
 
 .pnl-icn {
   display: block;
@@ -155,7 +199,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   &:hover {
 
     color: white;
-    width: 120px;
+    width: 140px;
 
     .pnl-icn { background-color: $cl_theme_elements !important; }
 

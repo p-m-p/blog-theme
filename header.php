@@ -42,8 +42,8 @@
   <div id="info-bar">
 
     <ul id="info-selectors">
-      <li><a class="info-bar-icon" id="about-me-icn" href="" title="More about me"></a></li>
-      <li><a class="info-bar-icon" id="config-icn" href="" title="Display options for the site"></a></li>
+      <li><a class="info-bar-icon info-box-loader" id="about-me-icn" data-infosection="about" href="" title="More about me"></a></li>
+      <li><a class="info-bar-icon info-box-loader" id="config-icn" data-infosection="config" href="" title="Display options for the site"></a></li>
     </ul>
 
     <ul id="sm-links">
@@ -55,6 +55,50 @@
       <li><a class="info-bar-icon" id="subscribe-icn" href="" title="Subscribe to my RSS feed"></a></li>
     </ul>
 
+  </div>
+  <div id="info-box">
+    <div>
+
+    <section class="info-box-segment">
+      <h1 class="info-segment-title">Me, Phil Parsons</h1>
+      <p>
+        <img src="http://www.gravatar.com" alt="">
+        This is an example page. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:
+Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my blog.
+      </p>
+    </section>
+
+    <section class="info-box-segment">
+      <h1 class="info-segment-title">Achievements</h1>
+    </section>
+
+    <section class="info-box-segment">
+      <h1 class="info-segment-title">Skills</h1>
+      <ul class="skill-bars">
+        <li class="skill-bar">
+          <h2 data-level="95"><span class="skill-level">JavaScript &amp; jQuery</span></h2>
+          <div class="skill-total">95%</div>
+        </li>
+        <li class="skill-bar">
+          <h2 data-level="90"><span class="skill-level">PHP &amp; ColdFusion</span></h2>
+          <div class="skill-total">90%</div>
+        </li>
+        <li class="skill-bar">
+          <h2 data-level="80"><span class="skill-level">HTML(5) &amp; CSS(3)</span></h2>
+          <div class="skill-total">80%</div>
+        </li>
+        <li class="skill-bar">
+          <h2 data-level="65"><span class="skill-level">Ruby &amp; Rails</span></h2>
+          <div class="skill-total">65%</div>
+        </li>
+        <li class="skill-bar">
+          <h2 data-level="75"><span class="skill-level">Photoshop</span></h2>
+          <div class="skill-total">75%</div>
+        </li>
+      </ul>
+    </section>
+
+    </div>
   </div>
 
 	<header id="branding" role="banner">
