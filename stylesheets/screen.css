@@ -57,8 +57,8 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
-html {
-  font: 0.85em/1.2 helvetica, Arial, sans-serif; }
+body, html {
+  font: 0.85em/1.4 helvetica, Arial, sans-serif; }
 
 a {
   color: #00e; }
@@ -80,6 +80,12 @@ h1, h2, h3, h4 {
   font-weight: 500;
   text-transform: uppercase; }
 
+p img {
+  float: left;
+  margin: 0 5px 5px 0;
+  padding: 5px;
+  background: #dddddd; }
+
 /* =
 ----------------------------------------------------------------------------- */
 body {
@@ -95,11 +101,11 @@ body {
 ----------------------------------------------------------------------------- */
 #info-bar {
   background: black;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   overflow: hidden; }
 
 .icons-sprite, #flickr-icn, #twitter-icn, #linkedin-icn, #gplus-icn, #subscribe-icn, #about-me-icn, #config-icn, #pnl-11, #pnl-12 {
-  background: url('../images/icons-se92761eb27.png') no-repeat; }
+  background: url('../images/icons-s860a3a1229.png') no-repeat; }
 
 #sm-links {
   overflow: hidden;
@@ -112,37 +118,34 @@ body {
   float: left;
   width: 40px;
   height: 40px;
-  -moz-transition-property: background-color;
-  -webkit-transition-property: background-color;
-  -o-transition-property: background-color;
-  transition-property: background-color;
-  -moz-transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s; }
+  -webkit-transition: background-color, 0.3s;
+  -moz-transition: background-color, 0.3s;
+  -ms-transition: background-color, 0.3s;
+  -o-transition: background-color, 0.3s;
+  transition: background-color, 0.3s; }
 
 #flickr-icn {
-  background-position: 0 -88px; }
+  background-position: 0 -248px; }
   #flickr-icn:hover {
     background-color: #FE63BB; }
 
 #twitter-icn {
-  background-position: 0 -336px; }
+  background-position: 0 -80px; }
   #twitter-icn:hover {
     background-color: #019AD2; }
 
 #linkedin-icn {
-  background-position: 0 -168px; }
+  background-position: 0 -288px; }
   #linkedin-icn:hover {
     background-color: #0571A6; }
 
 #gplus-icn {
-  background-position: 0 -128px; }
+  background-position: 0 -40px; }
   #gplus-icn:hover {
     background-color: #C53727; }
 
 #subscribe-icn {
-  background-position: 0 -296px; }
+  background-position: 0 -120px; }
   #subscribe-icn:hover {
     background-color: #ff7200; }
 
@@ -153,14 +156,14 @@ body {
     display: inline; }
 
 #about-me-icn {
-  background-position: 0 0; }
+  background-position: 0 -208px; }
   #about-me-icn:hover {
-    background-color: #b900da; }
+    background-color: #0071da; }
 
 #config-icn {
-  background-position: 0 -256px; }
+  background-position: 0 0; }
   #config-icn:hover {
-    background-color: #b900da; }
+    background-color: #0071da; }
 
 #info-box {
   padding: 20px;
@@ -176,40 +179,72 @@ body {
   margin: 0 2% 0 0;
   float: left; }
 
+.info-box-segment:last-child {
+  margin: 0;
+  width: 33.33%; }
+
 .info-segment-title {
-  font-size: 2em;
+  font-size: 2.4em;
   margin: 0 0 .4em; }
 
 .skill-bar {
-  overflow: hidden; }
-  .skill-bar h2 {
-    margin: 0 40px 0 0;
-    background-color: #efefef;
-    color: white; }
+  position: relative;
+  margin: 0 0 5px; }
+
+.skill {
+  margin: 0 55px 0 0;
+  background-color: #dddddd;
+  position: relative; }
+
+.skill-total, .skill {
+  color: white;
+  font: 500 1.4em/1 "Cabin Condensed", helvetica, Arial, sans-serif;
+  padding: 5px; }
 
 .skill-level {
-  display: inline-block;
-  background: #b900da; }
+  display: block;
+  background: #0071da;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  -webkit-transition: width, 2s;
+  -moz-transition: width, 2s;
+  -ms-transition: width, 2s;
+  -o-transition: width, 2s;
+  transition: width, 2s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0.2, 0.1, 1);
+  -moz-transition-timing-function: cubic-bezier(0.7, 0.2, 0.1, 1);
+  -ms-transition-timing-function: cubic-bezier(0.7, 0.2, 0.1, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0.2, 0.1, 1);
+  transition-timing-function: cubic-bezier(0.7, 0.2, 0.1, 1); }
+
+.skill-title {
+  z-index: 2;
+  position: relative; }
 
 .skill-total {
-  width: 30px;
+  width: 40px;
   background: #333;
-  color: white;
-  float: right; }
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center; }
 
 /* =Branding and main navigation
 ----------------------------------------------------------------------------- */
 #branding {
   background: black;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   margin: 10px 0;
   position: relative;
   padding: 0 0 0 10px; }
 
 #site-title {
   font-size: 38px;
-  padding: 5px;
-  text-transform: uppercase; }
+  line-height: 38px;
+  padding: 5px; }
   #site-title a {
     color: white;
     text-decoration: none; }
@@ -223,27 +258,24 @@ body {
   display: inline; }
 
 #pnl-11 {
-  background-position: 0 -208px; }
+  background-position: 0 -160px; }
 
 #pnl-12 {
-  background-position: 0 -40px; }
+  background-position: 0 -328px; }
 
 .pnl-icn {
   display: block;
   float: left;
   width: 48px;
   height: 48px;
-  -moz-transition-property: background-color;
-  -webkit-transition-property: background-color;
-  -o-transition-property: background-color;
-  transition-property: background-color;
-  -moz-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  transition-duration: 0.4s; }
+  -webkit-transition: background-color, 0.4s;
+  -moz-transition: background-color, 0.4s;
+  -ms-transition: background-color, 0.4s;
+  -o-transition: background-color, 0.4s;
+  transition: background-color, 0.4s; }
 
 .pnl-txt {
-  font: 600 16px/1 "Cabin Condensed", helvetica, Arial, sans-serif;
+  font: 500 16px/1 "Cabin Condensed", helvetica, Arial, sans-serif;
   text-transform: uppercase;
   padding: 16px 10px 0;
   display: block;
@@ -260,19 +292,58 @@ body {
   width: 48px;
   height: 48px;
   overflow: hidden;
-  -moz-transition-property: width;
-  -webkit-transition-property: width;
-  -o-transition-property: width;
-  transition-property: width;
-  -moz-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  transition-duration: 0.4s; }
+  -webkit-transition: width, 0.4s;
+  -moz-transition: width, 0.4s;
+  -ms-transition: width, 0.4s;
+  -o-transition: width, 0.4s;
+  transition: width, 0.4s; }
   .primary-nav-link:hover {
     color: white;
     width: 140px; }
     .primary-nav-link:hover .pnl-icn {
-      background-color: #b900da !important; }
+      background-color: #0071da !important; }
+
+/* =Featured project slider
+----------------------------------------------------------------------------- */
+#featured-projects {
+  position: relative; }
+
+#featured-project-nav {
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+#feature-links {
+  overflow: hidden; }
+  #feature-links li {
+    display: inline; }
+
+.feature-link {
+  width: 10px;
+  height: 10px;
+  text-indent: -1000px;
+  overflow: hidden;
+  background-color: #dddddd;
+  display: block;
+  float: left;
+  margin: 0 0 0 5px; }
+  .feature-link.current {
+    background-color: #0071da; }
+
+.featured-project {
+  margin: 0;
+  overflow: hidden; }
+
+.feature {
+  width: 700px;
+  height: 350px;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  display: block;
+  float: left; }
+
+.feature-desc {
+  float: left; }
 
 /* =Utils
 ----------------------------------------------------------------------------- */

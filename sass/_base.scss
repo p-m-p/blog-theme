@@ -1,5 +1,5 @@
-html {
-  font: .85em/1.2 helvetica, Arial, sans-serif;
+body, html {
+  font: .85em/1.4 helvetica, Arial, sans-serif;
 }
 
 a { color: #00e }
@@ -12,4 +12,16 @@ h1,h2,h3,h4 {
   font-family: $display_font;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+p {
+
+
+  img { // align content images left by default
+    float: left;
+    margin: 0 $thin_gap $thin_gap 0;
+    padding: $thin_padding;
+    background: $cl_neutral_bg;
+  }
+
 }

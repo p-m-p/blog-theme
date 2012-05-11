@@ -22,7 +22,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 /* =Info and settings bar
 ----------------------------------------------------------------------------- */
 #info-bar {
-  @include background_rgba(0, 0, 0, 0.5);
+  @include background_rgba(0, 0, 0, 0.8);
   overflow: hidden;
 }
 
@@ -90,7 +90,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 }
 
 #info-box {
-  padding: $gap * 2;
+  padding: $padding;
   background: white;
   position: relative;
   top: -300px;
@@ -105,39 +105,63 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   float: left;
 }
 
+.info-box-segment:last-child {
+  margin: 0;
+  width: 33.33%;
+}
+
 .info-segment-title {
-  font-size: 2em;
+  font-size: 2.4em;
   margin: 0 0 .4em;
 }
 
 .skill-bar {
-  
-  overflow: hidden;
+  position: relative;
+  margin: 0 0 $gap / 2;
+}
 
-  h2 {
-    margin: 0 30px + $gap 0 0;
-    background-color: #efefef;
-    color: white;
-  }
+.skill {
+  margin: 0 (40px + ($thin_padding * 3)) 0 0;
+  background-color: $cl_neutral_bg;
+  position: relative;
+}
 
+.skill-total, .skill {
+  color: white;
+  font: 500 1.4em/1 $display_font;
+  padding: $thin_padding;
 }
 
 .skill-level {
-  display: inline-block;
+  display: block;
   background: $cl_theme_elements;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  @include transition(width, 2s);
+  @include transition-timing-function(cubic-bezier( .7, .2, .1, 1 ));
+}
+
+.skill-title {
+  z-index: 2;
+  position: relative;
 }
 
 .skill-total {
-  width: 30px;
+  width: 40px;
   background: #333;
-  color: white;
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
 }
 
 /* =Branding and main navigation
 ----------------------------------------------------------------------------- */
 #branding {
-  @include background_rgba(0, 0, 0, 0.5);
+  @include background_rgba(0, 0, 0, 0.8);
   margin: $gap 0;
   position: relative;
   padding: 0 0 0 $gap;
@@ -146,8 +170,8 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 #site-title {
 
   font-size: 38px;
+  line-height: 38px;
   padding: $thin_padding;
-  text-transform: uppercase;
 
   a { color: white; text-decoration: none }
 
@@ -175,7 +199,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 }
 
 .pnl-txt {
-  font: 600 16px/1 $display_font;
+  font: 500 16px/1 $display_font;
   text-transform: uppercase;
   padding: 16px 10px 0;
   display: block;
@@ -205,6 +229,59 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 
   }
 
+}
+
+/* =Featured project slider
+----------------------------------------------------------------------------- */
+#featured-projects {
+  position: relative;
+}
+
+// navigation links
+#featured-project-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#feature-links {
+  overflow: hidden;
+  li { display: inline }
+}
+
+.feature-link {
+
+  width: $gap;
+  height: $gap;
+  text-indent: -1000px;
+  overflow: hidden;
+  background-color: $cl_neutral_bg;
+  display: block;
+  float: left;
+  margin: 0 0 0 $thin_gap;
+
+  &.current {
+    background-color: $cl_theme_elements;
+  }
+
+}
+
+// slides
+.featured-project {
+  margin: 0;
+  overflow: hidden;
+}
+
+.feature {
+  width: 700px;
+  height: 350px;
+  @include background_rgba(255,255,255,0.8);
+  display: block;
+  float: left;
+}
+
+.feature-desc {
+  float: left;
 }
 
 

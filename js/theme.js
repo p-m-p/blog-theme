@@ -1,4 +1,4 @@
-// jQuery easing plugin
+// jQuery easing
 jQuery.easing.jswing=jQuery.easing.swing;
 jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,a,c,b,d){return jQuery.easing[jQuery.easing.def](e,a,c,b,d)},easeInQuad:function(e,a,c,b,d){return b*(a/=d)*a+c},easeOutQuad:function(e,a,c,b,d){return-b*(a/=d)*(a-2)+c},easeInOutQuad:function(e,a,c,b,d){return 1>(a/=d/2)?b/2*a*a+c:-b/2*(--a*(a-2)-1)+c},easeInCubic:function(e,a,c,b,d){return b*(a/=d)*a*a+c},easeOutCubic:function(e,a,c,b,d){return b*((a=a/d-1)*a*a+1)+c},easeInOutCubic:function(e,a,c,b,d){return 1>(a/=d/2)?b/2*a*a*a+c:
 b/2*((a-=2)*a*a+2)+c},easeInQuart:function(e,a,c,b,d){return b*(a/=d)*a*a*a+c},easeOutQuart:function(e,a,c,b,d){return-b*((a=a/d-1)*a*a*a-1)+c},easeInOutQuart:function(e,a,c,b,d){return 1>(a/=d/2)?b/2*a*a*a*a+c:-b/2*((a-=2)*a*a*a-2)+c},easeInQuint:function(e,a,c,b,d){return b*(a/=d)*a*a*a*a+c},easeOutQuint:function(e,a,c,b,d){return b*((a=a/d-1)*a*a*a*a+1)+c},easeInOutQuint:function(e,a,c,b,d){return 1>(a/=d/2)?b/2*a*a*a*a*a+c:b/2*((a-=2)*a*a*a*a+2)+c},easeInSine:function(e,a,c,b,d){return-b*Math.cos(a/
@@ -13,13 +13,14 @@ b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},ea
   var THEME = (function () {
 
     var api = {}
-      , currInfoSection;
+      , currInfoSection
+      , infoBoxInitialisers = {}
+      , infoBoxDestructors = {};
 
+    // Theme api
     api.init = function () {
-      
       $('.info-box-loader').on("click", api.loadInfoBox);
-
-    }
+    };
 
     api.loadInfoBox = function (ev) {
 
@@ -32,21 +33,46 @@ b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},ea
         });
       }
       else {
-        //load info section from server here
+
+        // TODO load info section here
+
         $infoBox.slideDown(200, function () {
-          $infoBox.animate({top: 0}, 600, 'easeOutBounce');
+          $infoBox.animate({top: 0}, 600, 'easeOutBounce', function () {
+            if (section in infoBoxInitialisers) {
+              infoBoxInitialisers[section].call($infoBox);
+            }
+          });
         });
       }
 
-      currInfoSection = section; 
+      currInfoSection = section;
       ev.preventDefault();
 
-    }
+    };
+
+    // Info boxes
+    infoBoxInitialisers.about = function () {
+
+      this.find('.skill-level').each(function () {
+
+        var $sl = $(this)
+          , level = ($sl.data('level') || 0) + '%';
+
+        if (Modernizr.csstransitions) {
+          $sl.css('width', level);
+        }
+        else {
+          $sl.animate({width: level}, 2000, 'easeInOutQuad');
+        }
+
+      });
+
+    };
 
     return api;
 
   }());
-  
+
   $(THEME.init);
 
 })(jQuery);
