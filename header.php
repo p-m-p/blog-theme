@@ -43,7 +43,7 @@
 
     <ul id="info-selectors">
       <li><a class="info-bar-icon info-box-loader" id="about-me-icn" data-infosection="about" href="" title="More about me"></a></li>
-      <li><a class="info-bar-icon info-box-loader" id="config-icn" data-infosection="config" href="" title="Display options for the site"></a></li>
+<?php /*      <li><a class="info-bar-icon info-box-loader" id="config-icn" data-infosection="config" href="" title="Display options for the site"></a></li> */ ?>
     </ul>
 
     <ul id="sm-links">
@@ -71,6 +71,7 @@ Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my
 
     <section class="info-box-segment">
       <h1 class="info-segment-title">Achievements</h1>
+      <div id="cw-badges"></div>
     </section>
 
     <?php /* TODO: add these as custom post types */ ?>

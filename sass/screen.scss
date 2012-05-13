@@ -5,8 +5,7 @@ Author URI: http://philparsons.co.uk
 License URI: license.txt
 */
 
-@import 'var', 'mixins', 'reset', 'base';
-@import "compass/css3";
+@import 'var', 'mixins', 'reset', 'base', 'compass/css3';
 
 /* =
 ----------------------------------------------------------------------------- */
@@ -115,6 +114,12 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   margin: 0 0 .4em;
 }
 
+.cw-badge {
+  width: 48px;
+  height: 48px;
+  margin: 0 $thin_gap $thin_gap 0;
+}
+
 .skill-bar {
   position: relative;
   margin: 0 0 $gap / 2;
@@ -172,6 +177,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   font-size: 38px;
   line-height: 38px;
   padding: $thin_padding;
+  margin: 0;
 
   a { color: white; text-decoration: none }
 
@@ -186,7 +192,6 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 
 .menu-item { display: inline }
 
-// menu icons - TODO need clean database to set these up
 #pnl-11 { @include icons-sprite(projects) }
 #pnl-12 { @include icons-sprite(blog) }
 
@@ -235,6 +240,8 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 ----------------------------------------------------------------------------- */
 #featured-projects {
   position: relative;
+  height: 350px;
+  overflow: hidden;
 }
 
 // navigation links
@@ -275,7 +282,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 }
 
 .feature {
-  width: 700px;
+  width: 740px;
   height: 350px;
   @include background_rgba(255,255,255,0.8); // TODO remove this when images in place
   display: block;
@@ -285,8 +292,9 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 }
 
 .feature-desc {
-  margin: 0 700px + $gap 0 0;
-  min-height: 350px - (2 * $medium_padding);
+  margin: 0 740px + $gap 0 0;
+  height: 350px - (2 * $medium_padding);
+  overflow: auto;
 }
 
 /* =Layout elements

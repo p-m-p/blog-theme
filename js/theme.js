@@ -14,14 +14,15 @@ b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},ea
 
     var api = {}
       , currInfoSection
-      , infoBoxInitialisers = {}
-      , infoBoxDestructors = {};
+      , infoBoxInitialisers = {};
 
     // Theme api
     api.init = function () {
       $('.info-box-loader').on("click", api.loadInfoBox);
     };
 
+    // load info box from the top info bar such as the about
+    // me section and the site configuration options
     api.loadInfoBox = function (ev) {
 
       var section = $(this).data('infosection') || 'about'
@@ -34,7 +35,8 @@ b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},ea
       }
       else {
 
-        // TODO load info section here
+        // TODO load info section here if not already loaded then just
+        // show once loaded
 
         $infoBox.slideDown(200, function () {
           $infoBox.animate({top: 0}, 600, 'easeOutBounce', function () {
@@ -51,10 +53,14 @@ b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},ea
     };
 
     // Info boxes
+
+    // the about me section with coderwall badges and the skill bars
     infoBoxInitialisers.about = function () {
 
-      this.find('.skill-level').each(function () {
+      var $infoBox = this;
 
+      $infoBox.find('.skill-level').each(function () {
+        
         var $sl = $(this)
           , level = ($sl.data('level') || 0) + '%';
 
@@ -63,6 +69,26 @@ b*(7.5625*(a-=2.25/2.75)*a+0.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+0.984375)+c},ea
         }
         else {
           $sl.animate({width: level}, 2000, 'easeInOutQuad');
+        }
+
+      });
+
+      $.getJSON('app/cache/api.php?s=cw', function (data) {
+
+        var $cw;
+
+        if (data && 'badges' in data) {
+          $cw = $infoBox.find('#cw-badges');
+          $.each(data.badges, function (i, badge) {
+
+            var img = new Image;
+            img.src = badge.badge;
+            img.alt = badge.name;
+            img.title = badge.description;
+            img.className = 'cw-badge';
+            $cw.append(img);
+
+          });
         }
 
       });
