@@ -240,8 +240,9 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 // navigation links
 #featured-project-nav {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: $thin_gap;
+  right: $thin_gap;
+  z-index: 2;
 }
 
 #feature-links {
@@ -259,6 +260,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   display: block;
   float: left;
   margin: 0 0 0 $thin_gap;
+  border: solid 1px #aaa;
 
   &.current {
     background-color: $cl_theme_elements;
@@ -275,15 +277,25 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 .feature {
   width: 700px;
   height: 350px;
-  @include background_rgba(255,255,255,0.8);
+  @include background_rgba(255,255,255,0.8); // TODO remove this when images in place
   display: block;
-  float: left;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .feature-desc {
-  float: left;
+  margin: 0 700px + $gap 0 0;
+  min-height: 350px - (2 * $medium_padding);
 }
 
+/* =Layout elements
+----------------------------------------------------------------------------- */
+.dark-content-box {
+  @include background_rgba(0,0,0,0.8);
+  padding: $medium_padding;
+  color: white;
+}
 
 /* =Utils
 ----------------------------------------------------------------------------- */

@@ -1,14 +1,14 @@
 // dimensions
 $padding: 20px;
-$thin_padding: 5px;
+$medium_padding: $padding / 2;
+$thin_padding: $medium_padding / 2;
 
 $gap: 10px;
 $thin_gap: $gap / 2;
 
 // colors
-$cl_theme_elements: #0071da;
+$cl_theme_elements: #5400c7;
 $cl_neutral_bg: #ddd;
-
 
 // fonts
 $display_font: 'Cabin Condensed', helvetica, Arial, sans-serif;
