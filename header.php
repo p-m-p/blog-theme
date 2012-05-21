@@ -57,7 +57,7 @@
 
   </div>
   <div id="info-box">
-    <div>
+    <?php /*<div>
 
     <section class="info-box-segment">
       <h1 class="info-segment-title">Me, Phil Parsons</h1>
@@ -74,7 +74,6 @@ Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my
       <div id="cw-badges"></div>
     </section>
 
-    <?php /* TODO: add these as custom post types */ ?>
     <section class="info-box-segment">
       <h1 class="info-segment-title">Skills</h1>
       <ul class="skill-bars">
@@ -116,7 +115,7 @@ Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my
       </ul>
     </section>
 
-    </div>
+    </div>*/ ?>
   </div>
 
 	<header id="branding" role="banner">

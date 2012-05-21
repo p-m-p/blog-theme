@@ -28,14 +28,12 @@
 
         if (typeof infoBoxes[section] !== 'object') {
           infoBoxes[section] = api.loadInfoSection(section);
+          $infoBox.append(infoBoxes[section]);
         }
 
+        infoBoxes[section].style.zIndex = 99;
         $infoBox.slideDown(200, function () {
-          $infoBox.animate({top: 0}, 600, 'easeOutBounce', function () {
-            if (section in infoBoxInitialisers) {
-              infoBoxInitialisers[section].call($infoBox);
-            }
-          });
+          $infoBox.animate({top: 0}, 600, 'easeOutBounce');
         });
 
       }
@@ -48,6 +46,21 @@
     // loads an info box section page partial
     api.loadInfoSection = function (section) {
       
+      var innerBox = document.createElement('div');
+
+      $.get(section, {_ap: 1}, function (html) {
+
+        if (html) {
+          innerBox.innerHTML = html;
+          if (section in infoBoxInitialisers) {
+            infoBoxInitialisers[section].call(innerBox);
+          }
+        }
+
+      });
+      
+      innerBox.className = 'info-box-window loading';
+      return innerBox;
 
     };
 
@@ -56,7 +69,7 @@
     // the about me section with coderwall badges and the skill bars
     infoBoxInitialisers.about = function () {
 
-      var $infoBox = this;
+      var $infoBox = $(this);
 
       $infoBox.find('.skill-level').each(function () {
         
