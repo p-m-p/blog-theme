@@ -25,7 +25,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   overflow: hidden;
 }
 
-@import 'icons/*.png';
+@import 'icons/*.png'; /* load sprite */
 
 #sm-links {
 
@@ -90,6 +90,7 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
 
 #info-box {
   padding: $padding;
+  height: 200px;
   background: white;
   position: relative;
   top: -300px;

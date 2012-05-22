@@ -17,7 +17,8 @@
     api.loadInfoBox = function (ev) {
 
       var section = $(this).data('infosection') || 'about'
-        , $infoBox = $('#info-box');
+        , $infoBox = $('#info-box')
+        , box;
 
       if ($infoBox.is(':visible') && currInfoSection === section) {
         $infoBox.animate({top: '-300px'}, 200, function () {
@@ -31,9 +32,22 @@
           $infoBox.append(infoBoxes[section]);
         }
 
-        infoBoxes[section].style.zIndex = 99;
+        for (box in infoBoxes) {
+          if (infoBoxes.hasOwnProperty(box)) {
+            infoBoxes[box].style.zIndex = 1;
+          }
+        }
+        infoBoxes[section].style.zIndex = 2;
         $infoBox.slideDown(200, function () {
-          $infoBox.animate({top: 0}, 600, 'easeOutBounce');
+          $infoBox.animate({top: 0}, 600, 'easeOutBounce', function () {
+            if (
+              typeof infoBoxes[section]._ldd === 'undefined' && 
+              section in infoBoxInitialisers
+            ) {
+              infoBoxes[section]._ldd = true;
+              infoBoxInitialisers[section].call(infoBoxes[section]);
+            }
+          });
         });
 
       }
@@ -52,9 +66,6 @@
 
         if (html) {
           innerBox.innerHTML = html;
-          if (section in infoBoxInitialisers) {
-            infoBoxInitialisers[section].call(innerBox);
-          }
         }
 
       });
