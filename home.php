@@ -39,9 +39,10 @@ get_header(); ?>
         </figcaption>
         <img class="feature" src="<?php echo $image[0]; ?>" alt="">
       </figure>
-    </div>
 
     <?php endwhile; ?>
+
+    </div>
 
     <footer>
       <a href="" rel="prev">Previous project</a>
