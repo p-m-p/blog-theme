@@ -70,27 +70,29 @@ get_header(); ?>
     <article class="post">
 
       <section class="post-excerpt "> 
-        <div class="dark-content-box">
-          <h2><a href="<?php echo $permalink ?>"><?php echo $post->post_title; ?></a></h2>
-          <?php echo $post->post_content; ?>
+        <div class="post-inner">
+          <h2 class="post-title"><a href="<?php echo $permalink ?>"><?php echo $post->post_title; ?></a></h2>
+          <?php echo the_excerpt(); ?>
           <a href="<?php echo $permalink ?>"></a>
         </div>
       </section>
 
       <aside class="post-meta">
-        <div class=" gap-right">
+        <div class="gap-right">
 
           <a class="post-thumbnail" href="<?php echo $permalink ?>"><img src="<?php echo $image[0]; ?>" alt=""></a>
 
-          <div class="dark-content-box">
-            <time datetime="<?php echo $pub_date['year'].'-'.$pub_date['month'].'-'.$pub_date['day']; ?>" pubdate>
-              <span class="pub-day"><?php echo $pub_date['day']; ?></span>
-              <span class="pub-month"><?php echo date("M", mktime(0, 0, 0, $pub_date['month'])); ?></span>
-              <span class="pub-year"><?php echo $pub_date['year']; ?></span>
+          <div class="post-meta-date">
+            <time class="pub-date dark-content-box" datetime="<?php echo $pub_date['year'].'-'.$pub_date['month'].'-'.$pub_date['day']; ?>" pubdate>
+              <div class="pub-day"><?php echo $pub_date['day']; ?></div>
+              <div class="pub-month"><?php echo date("M", mktime(0, 0, 0, $pub_date['month'])); ?></div>
+              <div class="pub-year"><?php echo $pub_date['year']; ?></div>
             </time>
+          </div>
 
-            <div class="comment-count">
-              <span class="comment-total"><?php echo $post->comment_count; ?></span>
+          <div class="post-meta-comments">
+            <div class="dark-content-box">
+              <div class="comment-total"><?php echo $post->comment_count; ?></div>
               comments
             </div>
           </div>
