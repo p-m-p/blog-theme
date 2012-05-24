@@ -52,7 +52,7 @@ get_header(); ?>
   </section><!-- #featured-projects -->
 
   <section id="posts">
-    <h2>Latest posts</h2>
+    <h2 class="section-heading"><span>Latest</span> posts</h2>
 
   <?php 
     $recent_posts = new WP_Query(array('cat' => '-4', 'posts_per_page' => 5)); 
@@ -68,23 +68,36 @@ get_header(); ?>
   ?>
 
     <article class="post">
-      <section class="post-excerpt"> 
-        <h2><a href="<?php echo $permalink ?>"><?php echo $post->post_title; ?></a></h2>
-        <?php echo $post->post_content; ?>
-        <a href="<?php echo $permalink ?>"></a>
+
+      <section class="post-excerpt "> 
+        <div class="dark-content-box">
+          <h2><a href="<?php echo $permalink ?>"><?php echo $post->post_title; ?></a></h2>
+          <?php echo $post->post_content; ?>
+          <a href="<?php echo $permalink ?>"></a>
+        </div>
       </section>
-      <aside class="post-meta dark-content-box">
-        <a href="<?php echo $permalink ?>"><img src="<?php echo $image[0]; ?>" alt=""></a>
-        <time datetime="<?php echo $pub_date['year'].'-'.$pub_date['month'].'-'.$pub_date['day']; ?>" pubdate>
-          <span class="pub-day"><?php echo $pub_date['day']; ?></span>
-          <span class="pub-month"><?php echo date("M", mktime(0, 0, 0, $pub_date['month'])); ?></span>
-          <span class="pub-year"><?php echo $pub_date['year']; ?></span>
-        </time>
-        <div class="comment-count">
-          <span class="comment-total"><?php echo $post->comment_count; ?></span>
-          comments
+
+      <aside class="post-meta">
+        <div class=" gap-right">
+
+          <a class="post-thumbnail" href="<?php echo $permalink ?>"><img src="<?php echo $image[0]; ?>" alt=""></a>
+
+          <div class="dark-content-box">
+            <time datetime="<?php echo $pub_date['year'].'-'.$pub_date['month'].'-'.$pub_date['day']; ?>" pubdate>
+              <span class="pub-day"><?php echo $pub_date['day']; ?></span>
+              <span class="pub-month"><?php echo date("M", mktime(0, 0, 0, $pub_date['month'])); ?></span>
+              <span class="pub-year"><?php echo $pub_date['year']; ?></span>
+            </time>
+
+            <div class="comment-count">
+              <span class="comment-total"><?php echo $post->comment_count; ?></span>
+              comments
+            </div>
+          </div>
+
         </div>
       </aside>
+
     </article>
 
   <?php endwhile; ?>

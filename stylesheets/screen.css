@@ -170,12 +170,12 @@ body {
 #about-me-icn {
   background-position: 0 -208px; }
   #about-me-icn:hover {
-    background-color: #5400c7; }
+    background-color: #b637ff; }
 
 #config-icn {
   background-position: 0 0; }
   #config-icn:hover {
-    background-color: #5400c7; }
+    background-color: #b637ff; }
 
 #info-box {
   padding: 20px;
@@ -221,7 +221,7 @@ body {
 
 .skill-level {
   display: block;
-  background: #5400c7;
+  background: #b637ff;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -320,7 +320,7 @@ body {
     color: white;
     width: 140px; }
     .primary-nav-link:hover .pnl-icn {
-      background-color: #5400c7 !important; }
+      background-color: #b637ff !important; }
 
 /* =Featured project slider
 ----------------------------------------------------------------------------- */
@@ -351,7 +351,7 @@ body {
   margin: 0 0 0 5px;
   border: solid 1px #aaa; }
   .feature-link.current {
-    background-color: #5400c7; }
+    background-color: #b637ff; }
 
 .featured-project {
   margin: 0;
@@ -372,6 +372,33 @@ body {
   height: 330px;
   overflow: auto; }
 
+/* =Posts
+----------------------------------------------------------------------------- */
+#posts {
+  width: 75%;
+  float: left; }
+
+.post {
+  overflow: hidden;
+  margin: 0 0 10px; }
+
+.post-excerpt {
+  width: 70%;
+  float: right; }
+
+.post-meta {
+  width: 30%;
+  float: right; }
+
+.post-thumbnail {
+  display: block;
+  margin-bottom: 5px; }
+  .post-thumbnail img {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    background: white; }
+
 /* =Layout elements
 ----------------------------------------------------------------------------- */
 .dark-content-box {
@@ -379,6 +406,17 @@ body {
   background: rgba(0, 0, 0, 0.8);
   padding: 10px;
   color: white; }
+
+.section-heading {
+  background-color: #b637ff;
+  color: white;
+  padding: 0 5px;
+  margin: 10px 0; }
+  .section-heading span {
+    color: black; }
+
+.gap-right {
+  margin-right: 10px; }
 
 /* =Utils
 ----------------------------------------------------------------------------- */

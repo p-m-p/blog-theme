@@ -298,12 +298,65 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   overflow: auto;
 }
 
+
+/* =Posts
+----------------------------------------------------------------------------- */
+#posts {
+  width: 75%;
+  float: left;
+}
+
+.post {
+  overflow: hidden;
+  margin: 0 0 $gap;
+}
+
+.post-excerpt {
+  width: 70%;
+  float: right;
+}
+
+.post-meta {
+  width: 30%;
+  float: right;
+}
+
+.post-thumbnail {
+
+  display: block;
+  margin-bottom: $thin_gap;
+
+  img {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    background: white; // TODO remove when images are in
+  }
+
+}
+
+
 /* =Layout elements
 ----------------------------------------------------------------------------- */
 .dark-content-box {
   @include background_rgba(0,0,0,0.8);
   padding: $medium_padding;
   color: white;
+}
+
+.section-heading {
+
+  background-color: $cl_theme_elements;
+  color: white;
+  padding: 0 $thin_padding;
+  margin: $gap 0;
+
+  span { color: black; }
+
+}
+
+.gap-right {
+  margin-right: $gap;
 }
 
 /* =Utils
