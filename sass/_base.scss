@@ -2,9 +2,9 @@ body, html {
   font: .85em/1.4 helvetica, Arial, sans-serif;
 }
 
-a { color: #00e }
-a:visited { color: #551a8b }
-a:hover { color: #06e }
+a { color: $cl_theme_elements }
+a:visited { color: darken($cl_theme_elements, 10%) }
+a:hover { color: lighten($cl_theme_elements, 10%) }
 a:focus { outline: thin dotted }
 a:hover, a:active { outline: 0 }
 
