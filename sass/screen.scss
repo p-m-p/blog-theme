@@ -7,9 +7,9 @@ License URI: license.txt
 
 @import 'var', 'mixins', 'reset', 'base', 'compass/css3';
 
-/* =
+/* =Base elements
 ----------------------------------------------------------------------------- */
-body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
+body { background: url(../images/main-bg.jpg) fixed no-repeat #9c958e }
 
 /* =Main page
 ----------------------------------------------------------------------------- */
@@ -428,6 +428,16 @@ body { background: url(../images/main-bg.jpg) no-repeat #9c958e }
   font-size: 20px;
   line-height: 1;
   margin: 0 0 4px;
+}
+
+/* =Sidebar
+----------------------------------------------------------------------------- */
+#secondary {
+  margin: $gap 0 0 75%;
+}
+
+.widget {
+  margin: 0 0 $gap $gap;
 }
 
 /* =Layout elements

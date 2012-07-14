@@ -61,13 +61,13 @@ body, html {
   font: 0.85em/1.4 helvetica, Arial, sans-serif; }
 
 a {
-  color: #00e; }
+  color: #b637ff; }
 
 a:visited {
-  color: #551a8b; }
+  color: #a304ff; }
 
 a:hover {
-  color: #06e; }
+  color: #c96aff; }
 
 a:focus {
   outline: thin dotted; }
@@ -97,10 +97,10 @@ p img {
   padding: 5px;
   background: #dddddd; }
 
-/* =
+/* =Base elements
 ----------------------------------------------------------------------------- */
 body {
-  background: url(../images/main-bg.jpg) no-repeat #9c958e; }
+  background: url(../images/main-bg.jpg) fixed no-repeat #9c958e; }
 
 /* =Main page
 ----------------------------------------------------------------------------- */
@@ -465,6 +465,14 @@ body {
   font-size: 20px;
   line-height: 1;
   margin: 0 0 4px; }
+
+/* =Sidebar
+----------------------------------------------------------------------------- */
+#secondary {
+  margin: 10px 0 0 75%; }
+
+.widget {
+  margin: 0 0 10px 10px; }
 
 /* =Layout elements
 ----------------------------------------------------------------------------- */
