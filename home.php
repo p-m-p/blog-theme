@@ -4,44 +4,55 @@
  * Description: Home page with projects and posts
  *
  */
+ 
+$projects = new WP_Query('category_name=projects');
+$images = array();
 
 get_header(); ?>
 
   <section id="featured-projects">
 
-    <nav id="featured-project-nav">
-      <ol id="feature-links">
-        <li><a class="feature-link" href="" title="">Project title</a></li>
-        <li><a class="feature-link current" href="" title="">Project title</a></li>
-        <li><a class="feature-link" href="" title="">Project title</a></li>
-        <li><a class="feature-link" href="" title="">Project title</a></li>
-      </ol>
-    </nav>
-
+    <?php if ($projects->post_count > 1) : ?>
+      <nav id="featured-project-nav">
+        <ol id="feature-links">
+          <?php for ($i = 0; $i < $projects->post_count; $i += 1) : ?>
+            <li><a class="feature-link<?php if ($i === 0) echo ' current'; ?>" href="#" data-index="<?php echo $i ?>"></a></li>
+          <?php endfor; ?>
+        </ol>
+      </nav>
+    <?php endif; ?>
 
     <div id="feature-slides">
 
-    <?php 
-      $projects = new WP_Query('category_name=projects');
-      while ($projects->have_posts()) : 
-        $projects->the_post();
-        $post = $projects->post;
-        $image = wp_get_attachment_image_src(
-            get_post_thumbnail_id($post->ID)
-          , 'single-post-thumbnail'
-        );
-    ?>
-
-      <figure class="featured-project">
-        <figcaption class="feature-desc dark-content-box">
-          <h2><?php echo $post->post_title; ?></h2>
-          <p><?php echo $post->post_content; ?></p>
-        </figcaption>
-        <img class="feature" src="<?php echo $image[0]; ?>" alt="">
-      </figure>
-
-    <?php endwhile; ?>
-
+      <div id="feature-descriptions" class="slider-viewport">
+    		<ul>
+    	    <?php 
+    	      while ($projects->have_posts()) : 
+    	        $projects->the_post();
+    	        $post = $projects->post;
+    	        $image = wp_get_attachment_image_src(
+    	            get_post_thumbnail_id($post->ID)
+    	          , 'single-post-thumbnail'
+    	        );
+    			    array_push($images, $image[0]);
+    	    ?>
+    	
+    	      <li class="feature-description dark-content-box">
+    	        <h2><?php echo $post->post_title; ?></h2>
+    	        <p><?php echo $post->post_content; ?></p>
+    	      </li>
+    	
+    	    <?php endwhile; ?>
+    		</ul>
+    	</div>
+		
+  		<div id="feature-images" class="slider-viewport">
+    		<ul>
+    		  <?php foreach ($images as $image) : ?>
+    		    <li><img class="feature-image" src="<?php echo $image; ?>"></li>
+    		  <?php endforeach; ?>
+    		</ul>
+  		</div>
     </div>
 
     <footer>
