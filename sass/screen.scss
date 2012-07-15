@@ -337,6 +337,7 @@ body { background: url(../images/main-bg.jpg) fixed no-repeat #9c958e }
 .post {
   overflow: hidden;
   margin: 0 0 $gap;
+  position: relative;
 }
 
 .post-excerpt {
@@ -430,6 +431,19 @@ body { background: url(../images/main-bg.jpg) fixed no-repeat #9c958e }
   margin: 0 0 4px;
 }
 
+.more-link {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  text-indent: -200px;
+  overflow: hidden;
+  @include icons-sprite(more-link);
+  
+}
+
 /* =Sidebar
 ----------------------------------------------------------------------------- */
 #secondary {
@@ -440,12 +454,32 @@ body { background: url(../images/main-bg.jpg) fixed no-repeat #9c958e }
   margin: 0 0 $gap $gap;
 }
 
+/* =Search
+----------------------------------------------------------------------------- */
+#searchsubmit { display: none }
+#s { width: 98%; padding: 4px 0 }
+
+/* =Footer
+----------------------------------------------------------------------------- */
+
+
 /* =Layout elements
 ----------------------------------------------------------------------------- */
 .dark-content-box {
+  
   @include background_rgba(0,0,0,0.9);
   padding: $medium_padding;
   color: white;
+  
+  a {
+    color: white;
+    text-decoration: none;
+    
+    &:hover {
+      border-bottom: solid 1px white;
+    }
+  }
+  
 }
 
 .section-heading {
@@ -469,6 +503,9 @@ body { background: url(../images/main-bg.jpg) fixed no-repeat #9c958e }
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
+}
+.secondary-text {
+  font-size: .9em;
 }
 #access a.assistive-text:active,
 #access a.assistive-text:focus {

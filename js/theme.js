@@ -76,7 +76,7 @@
     infoBoxInitialisers.about = function () {
       var $infoBox = $(this);
 
-      $infoBox.find('.skill-level').each(function () 
+      $infoBox.find('.skill-level').each(function () {
         var $sl = $(this)
           , level = ($sl.data('level') || 0) + '%';
 
@@ -107,13 +107,16 @@
 
     };
     
+    // Starts the feature slider on the home page
     api.startSlideShow = function () {
-      var $descriptions, $features;      
+      var $descriptions, $features, $featureLinks;      
       
       $descriptions = $('#feature-descriptions ul').boxSlider({
           speed: 800
         , effect: 'scrollHorz3d'
       });
+      
+      $featureLinks = $('.feature-link');
       
       // rotate the feature descriptions once the feature is in view
       $features = $('#feature-images ul').boxSlider({
@@ -121,11 +124,17 @@
         , autoScroll: true
         , timeout: 10000
         , effect: 'scrollVert3d'
-        , onafter: function () { $descriptions.boxSlider('next'); }
+        , onafter: function (cs, ns, ci, ni) {
+            $featureLinks
+              .removeClass('current')
+              .eq(ni)
+              .addClass('current');
+            $descriptions.boxSlider('next');
+          }
       });
       
       $('#feature-links').on('click', '.feature-link', function (ev) {
-        $('.feature-link').removeClass('current');
+        $featureLinks.removeClass('current');
         $features.boxSlider('showSlide', $(this).addClass('current').data('index'));
         ev.preventDefault();
       });

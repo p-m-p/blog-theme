@@ -12,8 +12,9 @@
 
 	</div><!-- #main -->
 
-	<footer role="contentinfo">
-
+	<footer id="main-footer" class="dark-content-box" role="contentinfo">
+    <p class="copy">&copy; <?php echo date('Y'); ?> Phil Parsons</p>
+    <p class="secondary-text">All articles including code featured on this site are covered under <a href="">this licence</a></p>
 	</footer><!-- #footer -->
 </div><!-- #page -->
 

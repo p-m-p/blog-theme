@@ -69,6 +69,8 @@ get_header(); ?>
     $recent_posts = new WP_Query(array('cat' => '-4', 'posts_per_page' => 5)); 
     while($recent_posts->have_posts()) : 
       $recent_posts->the_post();
+      global $more;
+      $more = 0;
       $post = $recent_posts->post;
       $image = wp_get_attachment_image_src(
           get_post_thumbnail_id($post->ID)
@@ -83,8 +85,7 @@ get_header(); ?>
       <section class="post-excerpt "> 
         <div class="post-inner">
           <h2 class="post-title"><a href="<?php echo $permalink ?>"><?php echo $post->post_title; ?></a></h2>
-          <?php echo the_excerpt(); ?>
-          <a href="<?php echo $permalink ?>"></a>
+          <?php echo the_content(); ?>
         </div>
       </section>
 
