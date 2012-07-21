@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Category
  * The template for displaying Category Archive pages.
  *
  * @package WordPress

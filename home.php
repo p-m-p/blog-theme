@@ -56,67 +56,69 @@ get_header(); ?>
     </div>
 
     <footer>
-      <a href="" rel="prev">Previous project</a>
-      <a href="" rel="next">Next project</a>
+      <button type="button" id="play-pause">Pause</button>
     </footer>
 
   </section><!-- #featured-projects -->
-
-  <section id="posts">
-    <h2 class="section-heading"><span>Latest</span> posts</h2>
-
-  <?php 
-    $recent_posts = new WP_Query(array('cat' => '-4', 'posts_per_page' => 5)); 
-    while($recent_posts->have_posts()) : 
-      $recent_posts->the_post();
-      global $more;
-      $more = 0;
-      $post = $recent_posts->post;
-      $image = wp_get_attachment_image_src(
-          get_post_thumbnail_id($post->ID)
-        , 'single-post-thumbnail'
-      );
-      $pub_date = date_parse($post->post_date_gmt);
-      $permalink = get_permalink($post->ID);
-  ?>
-
-    <article class="post">
-
-      <section class="post-excerpt "> 
-        <div class="post-inner">
-          <h2 class="post-title"><a href="<?php echo $permalink ?>"><?php echo $post->post_title; ?></a></h2>
-          <?php echo the_content(); ?>
-        </div>
-      </section>
-
-      <aside class="post-meta">
-        <div class="gap-right">
-
-          <a class="post-thumbnail" href="<?php echo $permalink ?>"><img src="<?php echo $image[0]; ?>" alt=""></a>
-
-          <div class="post-meta-date">
-            <time class="pub-date dark-content-box" datetime="<?php echo $pub_date['year'].'-'.$pub_date['month'].'-'.$pub_date['day']; ?>" pubdate>
-              <div class="pub-day"><?php echo $pub_date['day']; ?></div>
-              <div class="pub-month"><?php echo date("M", mktime(0, 0, 0, $pub_date['month'])); ?></div>
-              <div class="pub-year"><?php echo $pub_date['year']; ?></div>
-            </time>
+  
+  <div id="page-content">
+    <section id="posts">
+      <h2 class="section-heading"><span>Latest</span> posts</h2>
+  
+    <?php 
+      $recent_posts = new WP_Query(array('cat' => '-4', 'posts_per_page' => 5)); 
+      while($recent_posts->have_posts()) : 
+        $recent_posts->the_post();
+        global $more;
+        $more = 0;
+        $post = $recent_posts->post;
+        $image = wp_get_attachment_image_src(
+            get_post_thumbnail_id($post->ID)
+          , 'single-post-thumbnail'
+        );
+        $pub_date = date_parse($post->post_date_gmt);
+        $permalink = get_permalink($post->ID);
+    ?>
+  
+      <article class="post">
+  
+        <section class="post-excerpt "> 
+          <div class="post-inner">
+            <h2 class="post-title"><a href="<?php echo $permalink ?>"><?php echo $post->post_title; ?></a></h2>
+            <?php echo the_content(); ?>
           </div>
-
-          <div class="post-meta-comments">
-            <div class="dark-content-box">
-              <div class="comment-total"><?php echo $post->comment_count; ?></div>
-              comments
+        </section>
+  
+        <aside class="post-meta">
+          <div class="gap-right">
+  
+            <a class="post-thumbnail" href="<?php echo $permalink ?>"><img src="<?php echo $image[0]; ?>" alt=""></a>
+  
+            <div class="post-meta-date">
+              <time class="pub-date dark-content-box" datetime="<?php echo $pub_date['year'].'-'.$pub_date['month'].'-'.$pub_date['day']; ?>" pubdate>
+                <div class="pub-day"><?php echo $pub_date['day']; ?></div>
+                <div class="pub-month"><?php echo date("M", mktime(0, 0, 0, $pub_date['month'])); ?></div>
+                <div class="pub-year"><?php echo $pub_date['year']; ?></div>
+              </time>
             </div>
+  
+            <div class="post-meta-comments">
+              <div class="dark-content-box">
+                <div class="comment-total"><?php echo $post->comment_count; ?></div>
+                comments
+              </div>
+            </div>
+  
           </div>
-
-        </div>
-      </aside>
-
-    </article>
-
-  <?php endwhile; ?>
-
-  </section><!-- #posts -->
-
-<?php get_sidebar(); ?>
+        </aside>
+  
+      </article>
+  
+    <?php endwhile; ?>
+  
+    </section><!-- #posts -->
+  
+    <?php get_sidebar(); ?>
+  </div>
+  
 <?php get_footer(); ?>

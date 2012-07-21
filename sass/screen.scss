@@ -7,461 +7,14 @@ License URI: license.txt
 
 @import 'var', 'mixins', 'reset', 'base', 'compass/css3';
 
-/* =Base elements
+/* =Elements
 ----------------------------------------------------------------------------- */
-body { background: url(../images/main-bg.jpg) fixed no-repeat #9c958e }
+body { background: url(../images/main-bg.png) repeat #555 }
 
-/* =Main page
------------------------------------------------------------------------------ */
-#page {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* =Info and settings bar
------------------------------------------------------------------------------ */
-#info-bar {
-  @include background_rgba(0, 0, 0, 0.8);
-  overflow: hidden;
-}
-
-@import 'icons/*.png'; /* load sprite */
-
-#sm-links {
-
-  overflow: hidden;
-  float: right;
-
-  li { display: inline }
-
-}
-
-.info-bar-icon {
-  display: block;
-  float: left;
-  width: 40px;
-  height: 40px;
-  @include transition(background-color, .3s);
-}
-
-#flickr-icn {
-  @include icons-sprite(flickr);
-  &:hover { background-color: #FE63BB }
-}
-
-#twitter-icn {
-  @include icons-sprite(twitter);
-  &:hover { background-color: #019AD2 }
-}
-
-#linkedin-icn {
-  @include icons-sprite(linkedin);
-  &:hover { background-color: #0571A6 }
-}
-
-#gplus-icn {
-  @include icons-sprite(gplus);
-  &:hover { background-color: #C53727 }
-}
-
-#subscribe-icn {
-  @include icons-sprite(subscribe);
-  &:hover { background-color: #ff7200 }
-}
-
-#info-selectors {
-
-  overflow: hidden;
-  float: left;
-
-  li { display: inline }
-
-}
-
-#about-me-icn {
-  @include icons-sprite(about-me);
-  &:hover { background-color: $cl_theme_elements }
-}
-
-#config-icn {
-  @include icons-sprite(settings);
-  &:hover { background-color: $cl_theme_elements }
-}
-
-#info-box {
-  padding: $padding;
-  height: 200px;
-  background: white;
-  position: relative;
-  top: -300px;
-  overflow: hidden;
-  display: none;
-  z-index: -1;
-}
-
-.info-box-segment {
-  width: 31.33%;
-  margin: 0 2% 0 0;
-  float: left;
-}
-
-.info-box-segment:last-child {
-  margin: 0;
-  width: 33.33%;
-}
-
-.info-segment-title {
-  font-size: 2.4em;
-  margin: 0 0 .4em;
-}
-
-.cw-badge {
-  width: 48px;
-  height: 48px;
-  margin: 0 $thin_gap $thin_gap 0;
-}
-
-.skill-bar {
-  position: relative;
-  margin: 0 0 $gap / 2;
-}
-
-.skill {
-  margin: 0 (40px + ($thin_padding * 3)) 0 0;
-  background-color: $cl_neutral_bg;
-  position: relative;
-}
-
-.skill-total, .skill {
-  color: white;
-  font: 500 1.4em/1 $display_font;
-  padding: $thin_padding;
-}
-
-.skill-level {
-  display: block;
-  background: $cl_theme_elements;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  @include transition(width, 2s);
-  @include transition-timing-function(cubic-bezier( .7, .2, .1, 1 ));
-}
-
-.skill-title {
-  z-index: 2;
-  position: relative;
-}
-
-.skill-total {
-  width: 40px;
-  background: #333;
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: center;
-}
-
-/* =Branding and main navigation
------------------------------------------------------------------------------ */
-#branding {
-  @include background_rgba(0, 0, 0, 0.8);
-  margin: $gap 0;
-  position: relative;
-  padding: 0 0 0 $gap;
-}
-
-#site-title {
-
-  font-size: 38px;
-  line-height: 38px;
-  padding: $thin_padding;
-  margin: 0;
-
-  a { color: white; text-decoration: none }
-
-}
-
-// main nav
-#menu-primary {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.menu-item { display: inline }
-
-#pnl-11 { @include icons-sprite(projects) }
-#pnl-12 { @include icons-sprite(blog) }
-
-.pnl-icn {
-  display: block;
-  float: left;
-  width: 48px;
-  height: 48px;
-  @include transition(background-color, .4s);
-}
-
-.pnl-txt {
-  font: 500 16px/1 $display_font;
-  text-transform: uppercase;
-  padding: 16px 10px 0;
-  display: block;
-  float: left;
-}
-
-.primary-nav-link {
-
-  display: block;
-  text-decoration: none;
-  float: left;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  margin: 0 $gap 0 0;
-  width: 48px;
-  height: 48px;
-  overflow: hidden;
-  @include transition(width, .4s);
-
-  &:hover {
-
-    color: white;
-    width: 140px;
-
-    .pnl-icn { background-color: $cl_theme_elements !important; }
-
-  }
-
-}
-
-/* =Featured project slider
------------------------------------------------------------------------------ */
-#featured-projects {
-  position: relative;
-  height: 350px;
-}
-
-// navigation links
-#featured-project-nav {
-  position: absolute;
-  top: $thin_gap;
-  right: $thin_gap;
-  z-index: 2;
-}
-
-#feature-links {
-  overflow: hidden;
-  li { display: inline }
-}
-
-.feature-link {
-
-  width: $gap;
-  height: $gap;
-  text-indent: -1000px;
-  overflow: hidden;
-  background-color: $cl_neutral_bg;
-  display: block;
-  float: left;
-  margin: 0 0 0 $thin_gap;
-  border: solid 1px #aaa;
-
-  &.current {
-    background-color: $cl_theme_elements;
-  }
-
-}
-
-// slides
-.featured-project {
-  margin: 0;
-  overflow: hidden;
-}
-
-#feature-images {
+p {
   
-  width: 740px;
-  height: 350px;
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  
-  ul {
-    position: relative;
-  }
-  
-  li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 350px;
-    width: 740px;
-  }
-  
+  img { vertical-align: text-top; }
 }
-
-.feature-image { width: 100%; height: 100%; }
-
-#feature-descriptions {
-  
-  margin: 0 740px + $gap 0 0;
-  overflow: hidden;
-  height: 350px;
-  
-  ul {
-    position: relative;
-    height: 350px;
-  }
-  
-  li {
-    height: 350px - (2 * $medium_padding);
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-}
-
-
-/* =Posts
------------------------------------------------------------------------------ */
-#posts {
-  width: 75%;
-  float: left;
-}
-
-.post {
-  overflow: hidden;
-  margin: 0 0 $gap;
-  position: relative;
-}
-
-.post-excerpt {
-  width: 65%;
-  float: right;
-}
-
-.post-inner {
-  min-height: 180px;
-  background-color: white;
-  padding: $padding;
-}
-
-.post-title {
-  
-  a {
-    color: $cl_content_text;
-    text-decoration: none;
-  }
-
-}
-
-.post-meta {
-  width: 35%;
-  float: right;
-  text-transform: uppercase;
-}
-
-.post-thumbnail {
-
-  display: block;
-  margin-bottom: $thin_gap;
-
-  img {
-    width: 100%;
-    height: auto;
-    min-height: 150px;
-    background: white; // TODO remove when images are in
-  }
-
-}
-
-.pub-date {
-
-  position: relative;
-  overflow: hidden;
-  display: block;
-  margin-right: $thin_gap;
-
-  div {
-    background-color: $cl_theme_elements;
-    font-size: 14px;
-    line-height: 1;
-    padding: 2px $thin_padding;
-    text-align: right;
-  }
-
-}
-
-.pub-day {
-  float: left;
-  font-size: 20px + $thin_gap !important;
-  width: 40px;
-  text-align: center !important;
-  padding: 8px $thin_padding !important;
-}
-
-.pub-month, .pub-year {
-  margin: 0 0 0 40px + ($thin_gap * 3); 
-}
-
-.pub-month {
-  margin-bottom: $thin_gap;
-}
-
-.post-meta-date {
-  width: 65%;
-  float: left;
-}
-
-.post-meta-comments {
-  width: 35%;
-  float: left;
-  text-align: center;
-  font-size: 12px;
-}
-
-.comment-total {
-  font-size: 20px;
-  line-height: 1;
-  margin: 0 0 4px;
-}
-
-.more-link {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  text-indent: -200px;
-  overflow: hidden;
-  @include icons-sprite(more-link);
-  
-}
-
-/* =Sidebar
------------------------------------------------------------------------------ */
-#secondary {
-  margin: $gap 0 0 75%;
-}
-
-.widget {
-  margin: 0 0 $gap $gap;
-}
-
-/* =Search
------------------------------------------------------------------------------ */
-#searchsubmit { display: none }
-#s { width: 98%; padding: 4px 0 }
-
-/* =Footer
------------------------------------------------------------------------------ */
-
 
 /* =Layout elements
 ----------------------------------------------------------------------------- */
@@ -474,9 +27,10 @@ body { background: url(../images/main-bg.jpg) fixed no-repeat #9c958e }
   a {
     color: white;
     text-decoration: none;
+    border-bottom: solid 1px #777;
     
     &:hover {
-      border-bottom: solid 1px white;
+      border-color: $cl_theme_elements;
     }
   }
   
@@ -493,9 +47,44 @@ body { background: url(../images/main-bg.jpg) fixed no-repeat #9c958e }
 
 }
 
-.gap-right {
-  margin-right: $gap;
+.gap-right { margin-right: $gap; }
+
+#page-content {
+  overflow: hidden;
 }
+
+#page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =Info and settings bar
+----------------------------------------------------------------------------- */
+@import 'info-bar';
+
+/* =Branding and main navigation
+----------------------------------------------------------------------------- */
+@import 'nav-and-brand';
+
+/* =Featured project slider
+----------------------------------------------------------------------------- */
+@import 'featured-slider';
+
+/* =Posts
+----------------------------------------------------------------------------- */
+@import 'posts';
+
+/* =Sidebar
+----------------------------------------------------------------------------- */
+@import 'sidebar';
+
+/* =Search
+----------------------------------------------------------------------------- */
+#searchsubmit { display: none }
+#s { width: 98%; padding: 4px 0 }
+
+/* =Footer
+----------------------------------------------------------------------------- */
 
 /* =Utils
 ----------------------------------------------------------------------------- */

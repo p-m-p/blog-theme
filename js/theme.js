@@ -89,17 +89,24 @@
       });
 
       $.getJSON('app/cache/api.php?s=cw', function (data) {
-        var $cw;
+        var $cw, timer = 0;
 
         if (data && 'badges' in data) {
           $cw = $infoBox.find('#cw-badges');
           $.each(data.badges, function (i, badge) {
-            var img = new Image;
+            var img = new Image; // -------------------------------------------- TODO make these link to an explanation of what they are
             img.src = badge.badge;
             img.alt = badge.name;
             img.title = badge.description;
             img.className = 'cw-badge';
+            img.style.opacity = 0;
             $cw.append(img);
+            
+            (function (img, timer) {
+              setTimeout(function () { $(img).fadeTo('slow', 1); }, timer);
+            }(img, timer));
+            
+            timer += 50;
           });
         }
 
@@ -129,7 +136,7 @@
               .removeClass('current')
               .eq(ni)
               .addClass('current');
-            $descriptions.boxSlider('next');
+            $descriptions.boxSlider('showSlide', ni);
           }
       });
       
@@ -138,6 +145,15 @@
         $features.boxSlider('showSlide', $(this).addClass('current').data('index'));
         ev.preventDefault();
       });
+      
+      // play pause button
+      $('#play-pause').on('click', function (ev) {
+        var $this = $(this);
+        
+        $features.boxSlider('playPause');
+        $this.toggleClass('paused');
+        ev.preventDefault();
+      });      
     };
 
     return api;
