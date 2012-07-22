@@ -353,3 +353,10 @@ class Main_Menu_Walker extends Walker_Nav_Menu {
     );
   }
 }
+
+
+function comment_form_styling( $args ) {
+  echo 'woot';
+  return $args;
+}
+add_filter( 'comment_form', 'comment_form_styling' );

@@ -102,8 +102,10 @@ p img {
 body {
   background: url(../images/main-bg.png) repeat #555555; }
 
-p img {
-  vertical-align: text-top; }
+p {
+  margin: 0 0 1.2em; }
+  p img {
+    vertical-align: text-top; }
 
 /* =Layout elements
 ----------------------------------------------------------------------------- */
@@ -119,12 +121,14 @@ p img {
     .dark-content-box a:hover {
       border-color: #44a399; }
 
-.section-heading {
+.section-heading,
+#reply-title {
   background-color: #44a399;
   color: white;
   padding: 0 5px;
-  margin: 10px 0; }
-  .section-heading span {
+  margin: 0 0 10px 0; }
+  .section-heading span,
+  #reply-title span {
     color: black; }
 
 .gap-right {
@@ -355,7 +359,8 @@ p img {
 ----------------------------------------------------------------------------- */
 #featured-projects {
   position: relative;
-  height: 350px; }
+  height: 350px;
+  margin: 0 0 10px; }
   #featured-projects footer {
     position: absolute;
     bottom: 10px;
@@ -534,7 +539,7 @@ p img {
 /* =Sidebar
 ----------------------------------------------------------------------------- */
 #secondary {
-  margin: 10px 0 0 75%; }
+  margin: 0 0 0 75%; }
 
 .widget {
   margin: 0 0 10px 10px; }
@@ -552,6 +557,9 @@ p img {
 
 /* =Footer
 ----------------------------------------------------------------------------- */
+#main-footer p {
+  margin: 0; }
+
 /* =Utils
 ----------------------------------------------------------------------------- */
 .assistive-text {

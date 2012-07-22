@@ -1,0 +1,119 @@
+#posts {
+  width: 75%;
+  float: left;
+}
+
+.post {
+  overflow: hidden;
+  margin: 0 0 $gap;
+}
+
+.post-excerpt {
+  width: 65%;
+  float: right;
+}
+
+.post-inner {
+  min-height: 180px;
+  background-color: white;
+  padding: $padding;
+  position: relative;
+}
+
+.post-title {
+  
+  a {
+    color: $cl_content_text;
+    text-decoration: none;
+  }
+
+}
+
+.post-meta {
+  width: 35%;
+  float: right;
+  text-transform: uppercase;
+}
+
+.post-thumbnail {
+
+  display: block;
+  margin-bottom: $thin_gap;
+
+  img {
+    width: 100%;
+    height: auto;
+    min-height: 150px;
+    background: white; // TODO remove when images are in
+  }
+
+}
+
+.pub-date {
+
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin-right: $thin_gap;
+
+  div {
+    background-color: $cl_theme_elements;
+    font-size: 14px;
+    line-height: 1;
+    padding: 2px $thin_padding;
+    text-align: right;
+  }
+
+}
+
+.pub-day {
+  float: left;
+  font-size: 20px + $thin_gap !important;
+  width: 40px;
+  text-align: center !important;
+  padding: 8px $thin_padding !important;
+}
+
+.pub-month, .pub-year {
+  margin: 0 0 0 40px + ($thin_gap * 3); 
+}
+
+.pub-month {
+  margin-bottom: $thin_gap;
+}
+
+.post-meta-date {
+  width: 65%;
+  float: left;
+}
+
+.post-meta-comments {
+  width: 35%;
+  float: left;
+  text-align: center;
+  font-size: 12px;
+}
+
+.comment-total {
+  font-size: 20px;
+  line-height: 1;
+  margin: 0 0 4px;
+}
+
+.more-link {
+  
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  text-indent: -200px;
+  overflow: hidden;
+  @include icons-sprite(more-link);
+  
+  &:hover {
+    @include icons-sprite(more-link-hover);
+  }
+  
+}

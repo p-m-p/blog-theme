@@ -1,0 +1,143 @@
+#info-bar {
+  @include background_rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+@import 'icons/*.png'; /* load sprite */
+
+#sm-links {
+
+  overflow: hidden;
+  float: right;
+
+  li { display: inline }
+
+}
+
+.info-bar-icon {
+  display: block;
+  float: left;
+  width: 40px;
+  height: 40px;
+  @include transition(background-color, .3s);
+}
+
+#flickr-icn {
+  @include icons-sprite(flickr);
+  &:hover { background-color: #FE63BB }
+}
+
+#twitter-icn {
+  @include icons-sprite(twitter);
+  &:hover { background-color: #019AD2 }
+}
+
+#linkedin-icn {
+  @include icons-sprite(linkedin);
+  &:hover { background-color: #0571A6 }
+}
+
+#gplus-icn {
+  @include icons-sprite(gplus);
+  &:hover { background-color: #C53727 }
+}
+
+#subscribe-icn {
+  @include icons-sprite(subscribe);
+  &:hover { background-color: #ff7200 }
+}
+
+#info-selectors {
+
+  overflow: hidden;
+  float: left;
+
+  li { display: inline }
+
+}
+
+#about-me-icn {
+  @include icons-sprite(about-me);
+  &:hover { background-color: $cl_theme_elements }
+}
+
+#config-icn {
+  @include icons-sprite(settings);
+  &:hover { background-color: $cl_theme_elements }
+}
+
+#info-box {
+  padding: $padding;
+  height: 200px;
+  background: white;
+  position: relative;
+  top: -300px;
+  overflow: hidden;
+  display: none;
+  z-index: -1;
+}
+
+.info-box-segment {
+  width: 31.33%;
+  margin: 0 2% 0 0;
+  float: left;
+}
+
+.info-box-segment:last-child {
+  margin: 0;
+  width: 33.33%;
+}
+
+.info-segment-title {
+  font-size: 2.4em;
+  margin: 0 0 .4em;
+}
+
+.cw-badge {
+  width: 48px;
+  height: 48px;
+  margin: 0 $thin_gap $thin_gap 0;
+}
+
+.skill-bar {
+  position: relative;
+  margin: 0 0 $gap / 2;
+}
+
+.skill {
+  margin: 0 (40px + ($thin_padding * 3)) 0 0;
+  background-color: $cl_neutral_bg;
+  position: relative;
+}
+
+.skill-total, .skill {
+  color: white;
+  font: 500 1.4em/1 $display_font;
+  padding: $thin_padding;
+}
+
+.skill-level {
+  display: block;
+  background: $cl_theme_elements;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  @include transition(width 2s);
+  @include transition-timing-function(cubic-bezier( .7, .2, .1, 1 ));
+}
+
+.skill-title {
+  z-index: 2;
+  position: relative;
+}
+
+.skill-total {
+  width: 40px;
+  background: #333;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}

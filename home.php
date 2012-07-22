@@ -82,7 +82,7 @@ get_header(); ?>
   
       <article class="post">
   
-        <section class="post-excerpt "> 
+        <section class="post-excerpt ">
           <div class="post-inner">
             <h2 class="post-title"><a href="<?php echo $permalink ?>"><?php echo $post->post_title; ?></a></h2>
             <?php echo the_content(); ?>

@@ -1,0 +1,11 @@
+#secondary {
+  margin: 0 0 0 75%;
+}
+
+.widget {
+  margin: 0 0 $gap $gap;
+  
+  &> ul li {
+    margin: 0 0 .8em;
+  }
+}
