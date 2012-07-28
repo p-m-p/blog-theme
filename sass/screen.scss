@@ -9,7 +9,9 @@ License URI: license.txt
 
 /* =Elements
 ----------------------------------------------------------------------------- */
-body { background: url(../images/main-bg.png) repeat #555 }
+body {
+  background: fixed url(../images/main-bg.jpg) center bottom no-repeat #bdd0dd
+}
 
 p {
   margin: 0 0 1.2em;
@@ -73,7 +75,7 @@ p {
 
 /* =Posts
 ----------------------------------------------------------------------------- */
-@import 'posts';
+@import 'posts', 'comments';
 
 /* =Sidebar
 ----------------------------------------------------------------------------- */

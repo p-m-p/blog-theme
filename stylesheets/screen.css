@@ -100,7 +100,7 @@ p img {
 /* =Elements
 ----------------------------------------------------------------------------- */
 body {
-  background: url(../images/main-bg.png) repeat #555555; }
+  background: fixed url(../images/main-bg.jpg) center bottom no-repeat #bdd0dd; }
 
 p {
   margin: 0 0 1.2em; }
@@ -535,6 +535,12 @@ p {
   background-position: 0 -104px; }
   .more-link:hover {
     background-position: 0 -64px; }
+
+#disqus_thread {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  margin: 0 0 10px; }
 
 /* =Sidebar
 ----------------------------------------------------------------------------- */

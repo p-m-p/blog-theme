@@ -30,9 +30,6 @@
 ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="stylesheet" media="screen,handheld" href="<?php echo get_template_directory_uri(); ?>/stylesheets/screen.css">
-<?php if (is_single()) : ?>
-  <link rel="stylesheet" media="screen,handheld" href="<?php echo get_template_directory_uri(); ?>/stylesheets/comments.css">
-<?php endif; ?>
 <link href="http://fonts.googleapis.com/css?family=Cabin+Condensed:500" rel="stylesheet">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.min.js"></script>
